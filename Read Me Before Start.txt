@@ -1,0 +1,21 @@
+Make This Important Changes in XAMPP's 'php.ini' File
+
+***Note: Only Select '.zip' Extension ZIP File While Uploading Project Compresses Version.***
+
+				***FILES RELATED***
+
+***Replace This Values In XAMPP's 'php.ini'.***
+
+*** post_max_size=10240M
+
+*** file_uploads=On
+
+*** upload_max_filesize=10240M
+
+*** max_file_uploads=100 
+
+				***NETWORK RELATED***
+
+***Replace This Values In XAMPP's 'httpd-xampp.conf'.***
+
+Replace all 'Require all denied' to 'Require all granted' for get access of this project in LAN.
