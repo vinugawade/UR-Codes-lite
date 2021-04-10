@@ -66,7 +66,10 @@ if ($sql->num_rows > 0) {
                     if (unlink('../uploaded/' . $_FILES["project_code"]["name"]) == true) {
 
 // ******************Rename The Extracted Folder******************
-                        @rename("../uploaded/" . str_replace(".zip", "", $_FILES["project_code"]["name"]), "../uploaded/" . str_replace(".zip", "", str_replace(" ", "-", $_FILES["project_code"]["name"])));
+                        if(rename("../uploaded/" . str_replace(".zip", "", $_FILES["project_code"]["name"]), "../uploaded/". str_replace(".zip", "", str_replace(" ", "-", $_FILES["project_code"]["name"])))!= true){
+                    echo "<script>alert('Unable to Rename Extracted Folder.');<script>";
+                    echo "<script> window.location.assign('upload_file.php'); </script>";
+                        }
 
 // ******************Move Project Report To Extracted Directory******************
                         if (move_uploaded_file($temp_report, $dir_report_pdf) == true) {
@@ -94,9 +97,13 @@ if ($sql->num_rows > 0) {
 
 // ******************Inserting Project Details In DB******************
             $in = "INSERT INTO `uploaded_project` (`project_name`, `project_description`, `department`, `class`, `sem`, `project_sub`, `project_uploader`, `project_uploader_email`, `project_uploader_number`, `project_group_members`, `project_report`, `project_code`, `project_zip_directory`, `project_report_directory`, `project_size`, `download_count`) VALUES ('{$project_name}', '{$project_description}', '{$department}', '{$class}', '{$sem}', '{$project_sub}', '{$_SESSION['logged_user']}', '{$_SESSION['logged_user_email']}', '{$_SESSION['logged_user_number']}', '{$project_group_members}', '{$project_report}', '{$project_code}', '{$dir_project}', '{$dir_report_pdf}', $size_code+$size_report,0)";
-            if ($conn->query($in) === true && $f === 1) {
+            if ($f === 1) {
+                if($conn->query($in) === true ){
                 echo "<script>alert('File Uploaded Successfully.');</script>";
                 echo "<script> window.location.assign('view_projects.php'); </script>";
+                }else{
+                    echo "<script>alert('Error in database but File Is extracted.');</script>";
+                    }
             } else {
                 if($f!==1){
                     echo "<script>alert('File Cannot Extract.');</script>";

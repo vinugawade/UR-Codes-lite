@@ -5,6 +5,5 @@ session_start();
 if (isset($_SESSION['logged_user'])) {
 
     session_destroy();
-    echo "<script>location.href='login.php'</script>";
-    
+    echo "<script>window.location.assign('./login.php');</script>";
 }

@@ -143,15 +143,15 @@ require 'connect.php';
                             </div>
 
                             <div class="form-group">
-                            <script type="text/javascript" language="JavaScript">
-                            document.write('<select class="form-control" name="project_sub" id="project_sub" onchange="javascript: dynamicsubject(this.options[this.selectedIndex].value);"><option value="">Select Class Semester</option></select>')
-                            </script>
+
+                           <select class="form-control" name="project_sub" id="project_sub" ><option>Select Class Semester</option></select>
+
 
                             </div>
 
                             <br>
                             <div class="form-group">
-                                <textarea class="form-control" name="project_group_members" id="project_group_members" rows="" cols="" placeholder="Names Of Your Members Separate By Comma(',')" required></textarea>
+                                <textarea class="form-control" name="project_group_members" id="project_group_members" placeholder="Names Of Your Members Separate By Comma(',')" required></textarea>
                                 <br>
                             </div>
                             <div class="row mt-3">

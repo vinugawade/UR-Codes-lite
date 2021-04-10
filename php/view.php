@@ -6,18 +6,8 @@ session_cache_limiter('private_no_expire');
 session_start();
 
 // ******************Get input From 'view_projects.php' Page******************
-if(isset($_POST['HTML'])){
-  $_SESSION['subject']="HTML";
-}elseif(isset($_POST['C'])){
-  $_SESSION['subject']="C";
-}elseif(isset($_POST['C++'])){
-  $_SESSION['subject']="C++";
-}elseif(isset($_POST['JAVA'])){
-  $_SESSION['subject']="JAVA";
-}elseif(isset($_POST['SQL'])){
-  $_SESSION['subject']="SQL";
-}elseif(isset($_POST['PYTHON'])){
-  $_SESSION['subject']="PYTHON";
+if(isset($_POST['input_sub'])){
+  $_SESSION['subject']=$_POST['input_sub'];
 }else{
   unset($_SESSION['subject']);
   echo"<script>alert('Please Select Subject First');</script>";
@@ -110,7 +100,7 @@ $href = "login.php";
  if ($result->num_rows == 0)
  {
    echo"<script>alert('No Projects Uploaded Yet.');</script>";
-   echo "<script> window.location.assign('view_projects.php'); </script>";
+   echo "<script> window.location.assign('./view_projects.php'); </script>";
  }else{
      while ($row = $result->fetch_assoc())
      {

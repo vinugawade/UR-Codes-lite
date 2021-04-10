@@ -51,7 +51,7 @@ body {
     </style>
   </head>
   <body>
-    <form action="view.php" method="POST">
+    <!-- <form action="view.php" method="POST"> -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
         <!--  Show this only on mobile to medium screens  -->
@@ -95,6 +95,35 @@ body {
         <div class="container">
           <div class="row py-5 px-3">
 
+
+          <?php
+//  ******************Fetching The Uploaded Projects******************
+ $q="SELECT `project_sub` FROM `uploaded_project` GROUP BY `project_sub`";
+ $result = $conn->query($q);
+ $count=$result->num_rows;
+ if ($result->num_rows == 0)
+ {
+   echo"<script>alert('No Projects Uploaded Yet.');</script>";
+   echo "<script> window.location.assign('./Home.php'); </script>";
+ }else{
+     while ($row = $result->fetch_assoc())
+     {
+      echo'
+      <div class="col-lg-6 col-sm-12 py-2 text-center">
+      <div  style="height:60px; width:250px:" >
+      <form action="./view.php" method="POST">
+      <button type="submit" name="input_sub" class="card col-lg-12 col-sm-12 py-2 px-5" value='.$row["project_sub"].'>'.$row["project_sub"].'</button>
+      </form>
+      </div>
+      </div>
+      ';
+
+     }
+ }
+
+?>
+
+<!--
             <div class="col-md-6 col-sm-12 col-lg-4 my-5 ">
               <div class="flip-card ">
                 <div class="flip-card-inner">
@@ -177,12 +206,12 @@ body {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
         </div>
 
-      </form>
+      <!-- </form> -->
 
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
