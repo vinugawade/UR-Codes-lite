@@ -107,7 +107,7 @@ $href = "login.php";
       echo'
 
       <div class="col-lg-6 col-sm-12 py-2 text-center">
-      <div class="" style="height:60px; width:250px:" >
+      <div style="height:60px; width:250px:" >
 
       <form action="open_project.php" method="POST">
       <button class="card col-lg-12 col-sm-12 py-2 px-5" type="submit" name="click" value='. $row["project_name"] .'><h4>'.str_replace("-"," ",$row["project_name"]).'<h4></button>

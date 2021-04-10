@@ -110,7 +110,7 @@ body {
      {
       echo'
       <div class="col-lg-6 col-sm-12 py-2 text-center">
-      <div  style="height:60px; width:250px:" >
+      <div style="height:60px; width:250px:" >
       <form action="./view.php" method="POST">
       <button type="submit" name="input_sub" class="card col-lg-12 col-sm-12 py-2 px-5" value='.$row["project_sub"].'>'.$row["project_sub"].'</button>
       </form>

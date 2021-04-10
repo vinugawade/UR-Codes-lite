@@ -38,7 +38,7 @@ $q = "SELECT * FROM `uploaded_project` WHERE `project_name`='{$project_name}' AN
 $sql = $conn->query($q);
 if ($sql->num_rows > 0) {
     echo "<script>alert('File Already Uploaded.');</script>";
-    echo "<script> window.location.assign('upload_file.php'); </script>";
+    echo "<script> window.location.assign('./upload_file.php'); </script>";
 
 } else {
 
@@ -66,9 +66,9 @@ if ($sql->num_rows > 0) {
                     if (unlink('../uploaded/' . $_FILES["project_code"]["name"]) == true) {
 
 // ******************Rename The Extracted Folder******************
-                        if(rename("../uploaded/" . str_replace(".zip", "", $_FILES["project_code"]["name"]), "../uploaded/". str_replace(".zip", "", str_replace(" ", "-", $_FILES["project_code"]["name"])))!= true){
-                    echo "<script>alert('Unable to Rename Extracted Folder.');<script>";
-                    echo "<script> window.location.assign('upload_file.php'); </script>";
+                        if(rename("../uploaded/".str_replace(".zip", "", $_FILES["project_code"]["name"]), "../uploaded/". str_replace(".zip", "", str_replace(" ", "-", $_FILES["project_code"]["name"]))) != true){
+                                echo "<script>alert('Unable to Rename Extracted Folder.');<script>";
+                                echo "<script> window.location.assign('./upload_file.php'); </script>";
                         }
 
 // ******************Move Project Report To Extracted Directory******************
@@ -84,11 +84,11 @@ if ($sql->num_rows > 0) {
                     }
                 } else {
                     echo "<script>alert('failed');<script>";
-                    echo "<script> window.location.assign('upload_file.php'); </script>";
+                    echo "<script> window.location.assign('./upload_file.php'); </script>";
                 }
             }else {
                 echo "<script>alert('Select .zip File Only.');</script>";
-                echo "<script> window.location.assign('upload_file.php'); </script>";
+                echo "<script> window.location.assign('./upload_file.php'); </script>";
 
             }
             $project_code = str_replace(" ", "-", current(explode(".", $project_code))); //String Replacing
@@ -100,7 +100,7 @@ if ($sql->num_rows > 0) {
             if ($f === 1) {
                 if($conn->query($in) === true ){
                 echo "<script>alert('File Uploaded Successfully.');</script>";
-                echo "<script> window.location.assign('view_projects.php'); </script>";
+                echo "<script> window.location.assign('./view_projects.php'); </script>";
                 }else{
                     echo "<script>alert('Error in database but File Is extracted.');</script>";
                     }
@@ -111,7 +111,7 @@ if ($sql->num_rows > 0) {
                 }else{
                 echo "<script>alert('Error in database.');</script>";
                 }
-                echo "<script> window.location.assign('upload_file.php'); </script>";
+                echo "<script> window.location.assign('./upload_file.php'); </script>";
             }
         }
     }
