@@ -9,30 +9,7 @@ require 'connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <script language="javascript" type="text/javascript">
-        // ******************User Defined Function******************
-        function dynamicdropdown(listindex) {
-            switch (listindex) {
-                case "FY":
-                    document.getElementById("status").options[0] = new Option("Select Semester", "");
-                    document.getElementById("status").options[1] = new Option("1st", "1");
-                    document.getElementById("status").options[2] = new Option("2nd", "2");
-                    break;
-
-                case "SY":
-                    document.getElementById("status").options[0] = new Option("Select Semester", "");
-                    document.getElementById("status").options[1] = new Option("3rd", "3");
-                    document.getElementById("status").options[2] = new Option("4th", "4");
-                    break;
-                case "TY":
-                    document.getElementById("status").options[0] = new Option("Select Semester", "");
-                    document.getElementById("status").options[1] = new Option("5th", "5");
-                    document.getElementById("status").options[2] = new Option("6th", "6");
-                    break;
-            }
-            return true;
-        }
-    </script>
+    <script language="javascript" type="text/javascript" src="../js/script.js">    </script>
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -127,38 +104,6 @@ require 'connect.php';
                                 <input type="text" class="form-control" name="project_name" placeholder="Your Project Title" required />
                                 <br>
                             </div>
-                            <div class="form-group">
-                                <select class="form-control select2" name="project_sub">
-                                    <option value="">Select Subject</option>
-                                    <option value="HTML">HTML</option>
-                                    <option value="C">C</option>
-                                    <option value="C++">C++</option>
-                                    <option value="Java">Java</option>
-                                    <option value="MySQL">MySQL</option>
-                                    <option value="Python">Python</option>
-<?php
-// $q="SELECT * FROM `subjects` ORDER BY `subject_name` ASC";
-//  $result = $conn->query($q);
-//  $count=$result->num_rows;
-//  if ($result->num_rows > 0){
-//      while ($row = $result->fetch_assoc()){
-//                                 echo"<option value=".$row['subject_name'].">".$row['subject_name']."</option>";
-//                                 }}
-                                    ?>
-
-                                </select>
-                            </div>
-<?php
-// if(isset($_POST['add'])){
-//     $sql = "INSERT INTO `subjects` (`subject_name`) VALUES ('{$_POST['sub']}')";
-//     if ($conn->query($sql) === TRUE) {
-//         echo "<script>alert('Subject Added.');window.location.assign('./upload_file.php');</script>";
-// }}
-?>
-                            <!-- <form action="./upload_file.php" method="post">
-                            <input type="text" name="sub" id="">
-                            <input type="submit" name="add" value="Add">
-                            </form> -->
 
                             <div class="form-group">
                                 <div class="row">
@@ -191,11 +136,19 @@ require 'connect.php';
                                     </div>
                                     <div class="col-sm-4">
                                         <script type="text/javascript" language="JavaScript">
-                                            document.write('<select class="form-control mt-2" name="status" id="status"><option value="">Select Class First</option></select>')
+                                            document.write('<select class="form-control mt-2" name="sem" id="sem" onchange="javascript: dynamicsubject(this.options[this.selectedIndex].value);"><option value="">Select Class First</option></select>')
                                         </script>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                            <script type="text/javascript" language="JavaScript">
+                            document.write('<select class="form-control" name="project_sub" id="project_sub" onchange="javascript: dynamicsubject(this.options[this.selectedIndex].value);"><option value="">Select Class Semester</option></select>')
+                            </script>
+
+                            </div>
+
                             <br>
                             <div class="form-group">
                                 <textarea class="form-control" name="project_group_members" id="project_group_members" rows="" cols="" placeholder="Names Of Your Members Separate By Comma(',')" required></textarea>
