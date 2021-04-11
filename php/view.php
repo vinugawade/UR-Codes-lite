@@ -1,6 +1,6 @@
 <?php
 // ******************required imports******************
-require 'connect.php';
+require './connect.php';
 header('Cache-Control: no cache');
 session_cache_limiter('private_no_expire');
 session_start();
@@ -11,19 +11,19 @@ if(isset($_POST['input_sub'])){
 }else{
   unset($_SESSION['subject']);
   echo"<script>alert('Please Select Subject First');</script>";
-  echo "<script> window.location.assign('view_projects.php'); </script>";
+  echo "<script> window.location.assign('./view_projects.php'); </script>";
 }
 // ******************Session Check******************
 if(@$_SESSION['logged_user']){
  $username = $_SESSION['logged_user'];
  $class = "visible";
- $href = "logout.php";
+ $href = "./logout.php";
  $text = "<i class='fa fa-sign-out' aria-hidden='true'></i>&nbsp;Log-Out";
 
 }else{
   $username = "Guest User&nbsp;";
   $class = "visible";
-$href = "login.php";
+$href = "./login.php";
  $text = "<i class='fa fa-sign-in' aria-hidden='true'></i>&nbsp;Log-In";
 
   }
@@ -65,10 +65,10 @@ $href = "login.php";
 
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link active" href="view_projects.php"><i class="fa fa-long-arrow-left"></i> Back <span class="sr-only">(current)</span></a>
+        <a class="nav-link active" href="./view_projects.php"><i class="fa fa-long-arrow-left"></i> Back <span class="sr-only">(current)</span></a>
       </li>
 <li class="nav-item">
-        <a class="nav-link" href="about_us.php"><i class="far fa-address-card"></i>&nbsp;About Us</a>
+        <a class="nav-link" href="./about_us.php"><i class="far fa-address-card"></i>&nbsp;About Us</a>
       </li>
     </ul>
 
@@ -105,19 +105,13 @@ $href = "login.php";
      while ($row = $result->fetch_assoc())
      {
       echo'
-
       <div class="col-lg-6 col-sm-12 py-2 text-center">
-      <div style="height:60px; width:250px:" >
-
-      <form action="open_project.php" method="POST">
-      <button class="card col-lg-12 col-sm-12 py-2 px-5" type="submit" name="click" value='. $row["project_name"] .'><h4>'.str_replace("-"," ",$row["project_name"]).'<h4></button>
+      <div style="height:60px; width:250px;" >
+      <form action="./open_project.php" method="POST">
+      <button class="card col-lg-12 col-sm-12 py-2 px-5" type="submit" name="click" value='.str_replace(" ","-",$row["project_name"]).'><h4>'.str_replace("-"," ",$row["project_name"]).'</h4></button>
       </form>
-
       </div>
-      </div>
-
-      ';
-
+      </div>';
      }
  }
 

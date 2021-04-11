@@ -1,6 +1,6 @@
 <?php
 // ******************required imports******************
-require 'connect.php';
+require './connect.php';
 header('Cache-Control: no cache');
 session_cache_limiter('private_no_expire');
 session_start();
@@ -21,7 +21,7 @@ if (isset($_POST['download-click']) && $_SESSION['filename'] && $_SESSION['downl
     if (!is_dir("../uploaded/zip")) {
 
         echo "<script>alert('You Couldn\'t Download At This Movement Please Contact The Developers.(DE:1)');</script>";
-        echo "<script> window.location.assign('view_projects.php'); </script>";
+        echo "<script> window.location.assign('./view_projects.php'); </script>";
 
     } else {
 
@@ -42,7 +42,7 @@ if (isset($_POST['download-click']) && $_SESSION['filename'] && $_SESSION['downl
                 if(count(glob("$dir/*")) === 0){
 
                      echo "<script>alert('Project Folder is Currently Empty Please Contact The Developers.(DE:2)');</script>";
-                     echo "<script> window.location.assign('view_projects.php'); </script>";
+                     echo "<script> window.location.assign('./view_projects.php'); </script>";
 
                 }else{
                         $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($rootPath), RecursiveIteratorIterator::SELF_FIRST);
@@ -63,14 +63,14 @@ if (isset($_POST['download-click']) && $_SESSION['filename'] && $_SESSION['downl
 
                         } else {
                             echo "<script>alert('Database Not Updating Please Contact Developers.')</script>";
-                            echo "<script> window.location.assign('view_projects.php'); </script>";
+                            echo "<script> window.location.assign('./view_projects.php'); </script>";
                         }
 
             }
         } else {
 
             echo "<script>alert('You Couldn\'t Download At This Movement Please Contact The Developers.(DE:3)');</script>";
-            echo "<script> window.location.assign('view_projects.php'); </script>";
+            echo "<script> window.location.assign('./view_projects.php'); </script>";
 
         }
         $zip->close();
@@ -78,6 +78,6 @@ if (isset($_POST['download-click']) && $_SESSION['filename'] && $_SESSION['downl
 } else {
 
     echo "<script>alert('Something Wrong happens While Downloading File.');</script>";
-    echo "<script> window.location.assign('view_projects.php'); </script>";
+    echo "<script> window.location.assign('./view_projects.php'); </script>";
 
 }

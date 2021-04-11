@@ -1,17 +1,14 @@
 <?php
-// ******************required imports******************
-require 'connect.php';
-session_start();
-
+// ******************required Checks******************
 if(@$_SESSION['logged_user']){
  $username = $_SESSION['logged_user'];
  $class = "visible";
- $href = "logout.php";
+ $href = "./logout.php";
  $text = "<i class='fa fa-sign-in' aria-hidden='true'></i>&nbsp;Log-Out";
 
 }else{
   $class = "invisible";
-$href = "login.php";
+$href = "./login.php";
  $text = "<i class='fa fa-sign-in' aria-hidden='true'></i>&nbsp;Log-In";
 }
 
@@ -163,10 +160,10 @@ ul{
 
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link active" href="Home.php"><i class="fa fa-long-arrow-left"></i> Back <span class="sr-only">(current)</span></a>
+        <a class="nav-link active" href="./index.php"><i class="fa fa-long-arrow-left"></i> Back <span class="sr-only">(current)</span></a>
       </li>
 <li class="nav-item">
-        <a class="nav-link" href="about_us.php"><i class="far fa-address-card"></i>&nbsp;About Us</a>
+        <a class="nav-link" href="./about_us.php"><i class="far fa-address-card"></i>&nbsp;About Us</a>
       </li>
 
     </ul>

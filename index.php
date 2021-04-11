@@ -85,7 +85,7 @@ body {
         <em>Explore Your Ideas</em>
       </h3>
 
-<a class="btn btn-primary btn-lg btn-full py-3 px-5 mb-3 mr-md-3" href="./PHP/Home.php">Get Started&nbsp;&nbsp;<i class="fad fa-angle-double-right"></i>
+<a class="btn btn-primary btn-lg btn-full py-3 px-5 mb-3 mr-md-3" href="./PHP/index.php">Get Started&nbsp;&nbsp;<i class="fad fa-angle-double-right"></i>
 </a>
 
     </div>

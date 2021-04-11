@@ -59,7 +59,7 @@ require 'connect.php';
         <div class="collapse navbar-collapse justify-content-between" id="navbarToggle">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="home.php">
+                    <a class="nav-link active" href="./index.php">
                         <i class="fa fa-long-arrow-left"></i>
                         Back <span class="sr-only">(current)</span>
                     </a>
@@ -127,7 +127,7 @@ require 'connect.php';
                                         </select>
                                     </div>
                                     <div class="col-sm-4">
-                                        <select class="form-control mt-2" id="source" name="source" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+                                        <select class="form-control mt-2" id="source" name="class" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
                                             <option value="">Select Class</option>
                                             <option value="FY">FY</option>
                                             <option value="SY">SY</option>

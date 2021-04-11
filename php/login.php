@@ -49,7 +49,7 @@
 
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="home.php"><i class="fa fa-long-arrow-left"></i> Back <span
+                    <a class="nav-link active" href="./index.php"><i class="fa fa-long-arrow-left"></i> Back <span
                             class="sr-only">(current)</span></a>
                 </li>
 
@@ -61,7 +61,7 @@
 
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="about_us.php"><i class="far fa-address-card"></i>&nbsp;About Us</a>
+                    <a class="nav-link" href="./about_us.php"><i class="far fa-address-card"></i>&nbsp;About Us</a>
                 </li>
 
             </ul>
@@ -82,7 +82,7 @@
                     </div>
                     <div class="card-body">
 
-                        <form action="Log-in.php" method='POST'>
+                        <form action="./Log-in.php" method='POST'>
                             <div class="form-group">
                                 <input type='email' name='email' id='email' placeholder="EMAIL" class='form-control' required>
                             </div>
@@ -93,7 +93,7 @@
                             </div>
                             <div class="my-4">
                                 <button type='submit' name='submit' class='btn btn-primary'><i class="fas fa-sign-in-alt"></i>&nbsp;LOGIN</button><br><br>
-                                <a id="check" type='submit' href='login.php'><small class="text-muted ">Forgot Password? Click Here</small></a>
+                                <a id="check" type='submit' href='./login.php'><small class="text-muted ">Forgot Password? Click Here</small></a>
                                 <div class="alert alert-warning mt-3 "  role="alert">
                                 <strong><i class="fas fa-exclamation-triangle"></i>&nbsp;Note:</strong> You need <strong class="alert-link" >internet</strong> to get the recovery mail.
                                 </div>
@@ -101,7 +101,7 @@
                                     check.addEventListener('click',function(){
                                         if (navigator.onLine) {
                                             if(document.getElementById('email').value!=""){
-                                            document.getElementById('check').href="forgot.php?email="+document.getElementById('email').value;
+                                            document.getElementById('check').href="./forgot.php?email="+document.getElementById('email').value;
                                         }else{
                                             alert("Please Fill Email Field.");
                                         }
@@ -129,7 +129,7 @@
                     </div>
                     <div class="card-body">
 
-                        <form action="register.php" method="POST">
+                        <form action="./register.php" method="POST">
                             <div class="form-group">
 
                                 <input type='text' name='full_name' placeholder="YOUR FULL NAME HERE"

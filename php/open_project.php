@@ -1,26 +1,22 @@
 <?php
 // ******************required imports******************
-require 'connect.php';
+require './connect.php';
 header('Cache-Control: no cache');
 session_cache_limiter('private_no_expire');
 session_start();
 
 // ******************Session Check******************
-// if (!$_SESSION['logged_user']) {
-//     echo "<script>alert('Please Log-In First.')</script>";
-//     echo "<script> window.location.assign('login.php'); </script>";
-// }
 
 if (@$_SESSION['logged_user']) {
     $username = $_SESSION['logged_user'];
     $class = "visible";
-    $href = "logout.php";
+    $href = "./logout.php";
     $text = "<i class='fa fa-sign-out' aria-hidden='true'></i>&nbsp;Log-Out";
 
 } else {
   $username = "Guest User&nbsp;";
     $class = "visible";
-    $href = "login.php";
+    $href = "./login.php";
     $text = "<i class='fa fa-sign-in' aria-hidden='true'></i>&nbsp;Log-In";
 }
 
@@ -67,10 +63,10 @@ a:hover{
 
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link active" href="view.php"><i class="fa fa-long-arrow-left"></i> Back <span class="sr-only">(current)</span></a>
+        <a class="nav-link active" href="./view.php"><i class="fa fa-long-arrow-left"></i> Back <span class="sr-only">(current)</span></a>
       </li>
 <li class="nav-item">
-        <a class="nav-link" href="about_us.php"><i class="far fa-address-card"></i>&nbsp;About Us</a>
+        <a class="nav-link" href="./about_us.php"><i class="far fa-address-card"></i>&nbsp;About Us</a>
       </li>
     </ul>
 <!--   Show this only lg screens and up   -->
@@ -102,7 +98,7 @@ a:hover{
     <div class="card-body">
 <?php
 // ******************Get Project Name And Save In Session******************
-@$click = $_POST['click'];
+@$click = str_replace("-"," ",$_POST['click']);
 $sql = "SELECT * FROM `uploaded_project` WHERE `project_name`='{$click}'";
 $result = $conn->query($sql);
 $count = $result->num_rows;
@@ -123,7 +119,7 @@ if ($result->num_rows > 0) {
         $_SESSION['size'] = $project_size = $row['project_size'];
     }
 }else{
-  echo "<script> window.location.assign('view_projects.php'); </script>";
+  echo "<script> window.location.assign('./view_projects.php'); </script>";
 }
 
 ?>
@@ -166,11 +162,11 @@ if ($result->num_rows > 0) {
   <div class="col-sm-8"><?php echo @$prodescription; ?></div>
 </div>
 
-<form action="download.php" method="POST">
+<form action="./download.php" method="POST">
         <button type="submit" class="btn btn-block btn-success" name="download-click"><i class="far fa-file-archive fa-lg"></i>&nbsp;Download</button>
     </form>
 
-    <form action="delete.php" method="POST">
+    <form action="./delete.php" method="POST">
         <button type="submit" class="btn btn-block my-2 btn-danger" name="delete-click" id="delete" disabled=true><i class="fas fa-trash-alt fa-lg"></i>&nbsp;Delete</button>
         <?php
 if (@$_SESSION['logged_user'] == @$projectuploader) {

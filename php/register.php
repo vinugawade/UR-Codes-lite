@@ -1,6 +1,6 @@
 <?php
 // ******************required imports******************
-require 'connect.php';
+require './connect.php';
 
 $name = $_POST['full_name'];
 $email = $_POST['email'];
@@ -14,7 +14,7 @@ $sql = $conn->query($q);
 if ($sql->num_rows > 0) {
 
     echo "<script>alert('Users Email Already Registered Try Different Email.')</script>";
-    echo "<script> window.location.assign('login.php'); </script>";
+    echo "<script> window.location.assign('./login.php'); </script>";
 
 } else {
 
@@ -25,7 +25,7 @@ if ($sql->num_rows > 0) {
     if ($sql->num_rows > 0) {
 
         echo "<script>alert('Password Already Registered Try Again.')</script>";
-        echo "<script> window.location.assign('login.php'); </script>";
+        echo "<script> window.location.assign('./login.php'); </script>";
 
     } else {
 
@@ -34,12 +34,12 @@ if ($sql->num_rows > 0) {
         if ($conn->query($sql) === true) {
 
             echo "<script>alert('User Registered Now You Can LogIn.')</script>";
-            echo "<script> window.location.assign('login.php'); </script>";
+            echo "<script> window.location.assign('./login.php'); </script>";
 
         } else {
 
             echo "<script>alert('Some Error is Occurred Please Try Again.')</script>";
-            echo "<script> window.location.assign('login.php'); </script>";
+            echo "<script> window.location.assign('./login.php'); </script>";
 
         }
     }

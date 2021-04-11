@@ -1,6 +1,6 @@
 <?php
 // ******************required imports******************
-require 'connect.php';
+require './connect.php';
 session_start();
 
 $email = $_POST['email'];
@@ -25,7 +25,7 @@ if ($sql->num_rows > 0) {
         }
 
         echo "<script>alert('Welcome \"{$_SESSION['logged_user']}\".')</script>";
-        echo "<script> window.location.assign('Home.php'); </script>";
+        echo "<script> window.location.assign('./index.php'); </script>";
 
     } else {
         echo "<script>alert('Unable To Log-In.')</script>";
@@ -34,6 +34,6 @@ if ($sql->num_rows > 0) {
 } else {
 
     echo "<script>alert('Invalid Email/Password.')</script>";
-    echo "<script> window.location.assign('login.php'); </script>";
+    echo "<script> window.location.assign('./login.php'); </script>";
 
 }
