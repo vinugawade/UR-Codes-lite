@@ -1,6 +1,6 @@
 <?php
 // ******************required imports******************
-require ',.connect.php';
+require './connect.php';
 session_start();
 
 // ******************Session Check******************

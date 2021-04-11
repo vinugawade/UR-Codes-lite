@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2021 at 12:18 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.2
+-- Generation Time: Apr 11, 2021 at 10:10 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `uploaded_project` (
   `department` varchar(100) NOT NULL,
   `class` varchar(11) NOT NULL,
   `sem` varchar(10) NOT NULL,
-  `project_sub` varchar(11) NOT NULL,
+  `project_sub` varchar(110) NOT NULL,
   `project_uploader` varchar(100) NOT NULL,
   `project_uploader_email` varchar(100) NOT NULL,
   `project_uploader_number` bigint(10) NOT NULL,

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2021 at 07:38 PM
+-- Generation Time: Apr 11, 2021 at 10:09 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -33,7 +33,7 @@ CREATE TABLE `uploaded_project` (
   `department` varchar(100) NOT NULL,
   `class` varchar(11) NOT NULL,
   `sem` varchar(10) NOT NULL,
-  `project_sub` varchar(11) NOT NULL,
+  `project_sub` varchar(110) NOT NULL,
   `project_uploader` varchar(100) NOT NULL,
   `project_uploader_email` varchar(100) NOT NULL,
   `project_uploader_number` bigint(10) NOT NULL,
@@ -58,13 +58,6 @@ CREATE TABLE `user_registration` (
   `phone_no` bigint(10) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user_registration`
---
-
-INSERT INTO `user_registration` (`name`, `email`, `phone_no`, `password`) VALUES
-('Vinay Gawade', 'vinulike11@gmail.com', 7854986524, '202cb962ac59075b964b07152d234b70');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
