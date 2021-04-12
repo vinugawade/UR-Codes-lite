@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+html,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Flamenco', cursive;
+}
+
+body {
+    height: 100%;
+    background: #fec107;
+}
+
+.btn {
+    border-radius: 25px;
+}
+
+@media screen and (max-width: 993px) {
+    .masthead {
+        height: 80vh;
+    }
+    .masthead h1 {
+        font-size: 4.5rem;
+    }
+    .masthead h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .masthead {
+        height: 80vh;
+    }
+    .masthead h1 {
+        font-size: 4.2rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .masthead {
+        height: 90vh;
+    }
+    .masthead h1 {
+        font-size: 2.8rem;
+    }
+}

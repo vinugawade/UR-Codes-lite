@@ -1,9 +1,7 @@
 <?php
-// ******************required imports******************
-require './connect.php';
 header('Cache-Control: no cache');
 session_cache_limiter('private_no_expire');
-session_start();
+include("./includes/check_user.php");
 
 // ******************User Defined Function******************
 function is_dir_empty($dir) {
@@ -14,14 +12,13 @@ function is_dir_empty($dir) {
 
 if (isset($_POST['download-click']) && $_SESSION['filename'] && $_SESSION['download']) {
 
-    $rootPath = realpath($_SESSION['download']);
+    $rootPath = realpath(str_replace(".zip","",$_SESSION['download']));
 
 // ******************Zip Creation******************
     $zip = new ZipArchive();
     if (!is_dir("../uploaded/zip")) {
 
-        echo "<script>alert('You Couldn\'t Download At This Movement Please Contact The Developers.(DE:1)');</script>";
-        echo "<script> window.location.assign('./view_projects.php'); </script>";
+        echo "<script>alert('You Couldn\'t Download At This Movement Please Contact The Developers.(DE:1)');window.location.assign('./view_projects.php'); </script>";
 
     } else {
 
@@ -35,14 +32,13 @@ if (isset($_POST['download-click']) && $_SESSION['filename'] && $_SESSION['downl
                 $count = $result->num_rows;
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        $dir='../uploaded/'.$row['project_code'];
+                        $dir=str_replace(".zip","",$row['project_zip_directory']);
                     }
                 }
 
                 if(count(glob("$dir/*")) === 0){
 
-                     echo "<script>alert('Project Folder is Currently Empty Please Contact The Developers.(DE:2)');</script>";
-                     echo "<script> window.location.assign('./view_projects.php'); </script>";
+                    echo "<script>alert('Project Folder is Currently Empty Please Contact The Developers.(DE:2)');window.location.assign('./view_projects.php'); </script>";
 
                 }else{
                         $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($rootPath), RecursiveIteratorIterator::SELF_FIRST);
@@ -62,22 +58,19 @@ if (isset($_POST['download-click']) && $_SESSION['filename'] && $_SESSION['downl
                             header('Location:' . '../uploaded/zip/' . $_SESSION['filename'] . '.zip');
 
                         } else {
-                            echo "<script>alert('Database Not Updating Please Contact Developers.')</script>";
-                            echo "<script> window.location.assign('./view_projects.php'); </script>";
+                            echo "<script>alert('Database Not Updating Please Contact Developers.'); window.location.assign('./view_projects.php'); </script>";
                         }
 
             }
         } else {
 
-            echo "<script>alert('You Couldn\'t Download At This Movement Please Contact The Developers.(DE:3)');</script>";
-            echo "<script> window.location.assign('./view_projects.php'); </script>";
+            echo "<script>alert('You Couldn\'t Download At This Movement Please Contact The Developers.(DE:3)');window.location.assign('./view_projects.php'); </script>";
 
         }
         $zip->close();
     }
 } else {
 
-    echo "<script>alert('Something Wrong happens While Downloading File.');</script>";
-    echo "<script> window.location.assign('./view_projects.php'); </script>";
+    echo "<script>alert('Something Wrong happens While Downloading File.');window.location.assign('./view_projects.php'); </script>";
 
 }

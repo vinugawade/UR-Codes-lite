@@ -1,7 +1,5 @@
 <?php
-// ******************required imports******************
-require './connect.php';
-session_start();
+include("./includes/check_user.php");
 
 $email = $_POST['email'];
 $password = md5($_POST['password']);
@@ -24,16 +22,14 @@ if ($sql->num_rows > 0) {
 
         }
 
-        echo "<script>alert('Welcome \"{$_SESSION['logged_user']}\".')</script>";
-        echo "<script> window.location.assign('./index.php'); </script>";
+        echo "<script>alert('Welcome \"{$_SESSION['logged_user']}\".');window.location.assign('./index.php'); </script>";
 
     } else {
-        echo "<script>alert('Unable To Log-In.')</script>";
+        echo "<script>alert('Unable To Log-In.');</script>";
     }
 
 } else {
 
-    echo "<script>alert('Invalid Email/Password.')</script>";
-    echo "<script> window.location.assign('./login.php'); </script>";
+    echo "<script>alert('Invalid Email/Password.');window.location.assign('./login.php'); </script>";
 
 }

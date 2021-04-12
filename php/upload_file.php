@@ -1,51 +1,22 @@
+<?php
+include("./includes/login_check.php");
+?>
 <!DOCTYPE HTML>
 <html>
-<?php
-require 'connect.php';
-?>
+
 <head>
     <title>Upload Files</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <script language="javascript" type="text/javascript" src="../js/script.js">    </script>
+    <script language="javascript" type="text/javascript" src="../js/script.js"> </script>
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="../ckeditor/ckeditor.js"></script>
-    <style>
-        body {
-            height: 100%;
-            background: #fec107;
-        }
-
-        input {
-            width: 100%;
-        }
-
-        .qicon {
-            position: relative;
-            top: 0.5rem;
-            display: inline-block;
-            background: url('images/q.png')no-repeat;
-            background-size: cover;
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-
-        .btn-login {
-            border-radius: 8px;
-        }
-
-        .help:hover {
-            width: 450px;
-            height: 380px;
-            display: inline-block;
-            background: url("../images/help.gif") no-repeat;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/upload_file.css">
 </head>
 
 <body>
@@ -77,7 +48,7 @@ require 'connect.php';
             <ul class="navbar-nav">
                 <li class="nav-item mt-2">
                     <span>Hii..</span>
-                    Vinay Gawade
+                    <?php echo @$username; ?>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn-login btn-danger text-white" href="logout.php">
@@ -101,7 +72,7 @@ require 'connect.php';
                     <div class="card-body">
                         <form action="./upload.php" enctype="multipart/form-data" method="POST">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="project_name" placeholder="Your Project Title" required />
+                                <input type="text" inputmode='text' class="form-control" name="project_name" placeholder="Your Project Title" required />
                                 <br>
                             </div>
 
@@ -121,14 +92,14 @@ require 'connect.php';
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-sm-4">
-                                        <select class="form-control mt-2" name="department">
-                                            <option value="">Select Department First</option>
+                                        <select class="form-control mt-2" name="department" required>
+                                            <option>Select Department First</option>
                                             <option value="computer">Computer Engineering</option>
                                         </select>
                                     </div>
                                     <div class="col-sm-4">
-                                        <select class="form-control mt-2" id="source" name="class" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
-                                            <option value="">Select Class</option>
+                                        <select class="form-control mt-2" id="source" name="class" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);" required>
+                                            <option>Select Class</option>
                                             <option value="FY">FY</option>
                                             <option value="SY">SY</option>
                                             <option value="TY">TY</option>
@@ -136,7 +107,7 @@ require 'connect.php';
                                     </div>
                                     <div class="col-sm-4">
                                         <script type="text/javascript" language="JavaScript">
-                                            document.write('<select class="form-control mt-2" name="sem" id="sem" onchange="javascript: dynamicsubject(this.options[this.selectedIndex].value);"><option value="">Select Class First</option></select>')
+                                            document.write('<select class="form-control mt-2" name="sem" id="sem" onchange="javascript: dynamicsubject(this.options[this.selectedIndex].value);" required><option>Select Class First</option></select>')
                                         </script>
                                     </div>
                                 </div>
@@ -144,7 +115,9 @@ require 'connect.php';
 
                             <div class="form-group">
 
-                           <select class="form-control" name="project_sub" id="project_sub" ><option>Select Class Semester</option></select>
+                                <select class="form-control" name="project_sub" id="project_sub" required>
+                                    <option>Select Class Semester</option>
+                                </select>
 
 
                             </div>
@@ -157,12 +130,11 @@ require 'connect.php';
                             <div class="row mt-3">
                                 <div class="col-sm-6">
                                     <label for="project_report">Attach Project Report(.PDF)</label>
-                                    <input class="form-control py-1" type="file" name="project_report" accept="application/pdf" required />
+                                    <input class="form-control py-1" type="file" inputmode='file' name="project_report" accept="application/pdf" required />
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="projectss_code">Attach Project Code(.ZIP)</label>
-                                    <!-- <span class="help" > <i class="fa fa-question-circle" aria-hidden="true"></i></span> -->
-                                    <input class="form-control py-1" type="file" name="project_code" accept="application/x-zip-compressed" required />
+                                    <input class="form-control py-1" type="file" inputmode='file' name="project_code" accept="application/x-zip-compressed" required />
                                 </div>
                             </div>
                     </div>

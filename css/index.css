@@ -1,0 +1,42 @@
+body {
+    height: 100%;
+    background: #fec107;
+}
+
+h3 {
+    text-align: justify;
+}
+
+.btn {
+    border-radius: 25px;
+}
+
+.masthead {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-login {
+    border-radius: 8px;
+}
+
+@media (min-width: 992px) {
+    .masthead {
+        height: 80vh;
+    }
+    .masthead h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 300px) {
+    .masthead {
+        height: 80vh;
+    }
+}
+
+@media (max-width: 580px) {
+    .masthead {
+        margin: 10px;
+    }
+}

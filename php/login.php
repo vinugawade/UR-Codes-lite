@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>UR-Codes lite</title>
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon" />
@@ -12,23 +11,7 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <style type="text/css">
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Yusei Magic', sans-serif;
-    }
-
-    body {
-     height: 100%;
-     background: #fec107;
- }
-
-    .card {
-        border-radius: 25px;
-    }
-    </style>
+<link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
@@ -52,6 +35,9 @@
                     <a class="nav-link active" href="./index.php"><i class="fa fa-long-arrow-left"></i> Back <span
                             class="sr-only">(current)</span></a>
                 </li>
+<li class="nav-item">
+        <a class="nav-link" href="../index.php"><i class="fas fa-home"></i>&nbsp;Home</a>
+      </li>
 
             </ul>
             <!--   Show this only lg screens and up   -->
@@ -84,11 +70,11 @@
 
                         <form action="./Log-in.php" method='POST'>
                             <div class="form-group">
-                                <input type='email' name='email' id='email' placeholder="EMAIL" class='form-control' required>
+                                <input type='email' name='email' inputmode='email' id='email' placeholder="EMAIL" class='form-control' required>
                             </div>
                             <div class="form-group">
 
-                                <input type='password' name='password' placeholder="PASSWORD" class='form-control'
+                                <input type='password' inputmode='password' name='password' placeholder="PASSWORD" class='form-control'
                                     required>
                             </div>
                             <div class="my-4">
@@ -132,22 +118,22 @@
                         <form action="./register.php" method="POST">
                             <div class="form-group">
 
-                                <input type='text' name='full_name' placeholder="YOUR FULL NAME HERE"
+                                <input type='text' inputmode='text' name='full_name' placeholder="YOUR FULL NAME HERE"
                                     class='form-control' required>
                             </div>
                             <div class="form-group">
 
-                                <input type='email' name='email' placeholder="EMAIL" class='form-control' required>
+                                <input type='email' inputmode='email' name='email' placeholder="EMAIL" class='form-control' required>
                             </div>
 
                             <div class="form-group">
 
-                                <input type='tel' pattern="[789][0-9]{9}" placeholder="PHONE NO" name='number'
+                                <input type='tel' inputmode='tel' pattern="[789][0-9]{9}" placeholder="PHONE NO" name='number'
                                     class='form-control' required>
                             </div>
                             <div class="form-group">
 
-                                <input type='password' name='password' placeholder="PASSWORD" class='form-control'
+                                <input type='password' inputmode='password' name='password' placeholder="PASSWORD" class='form-control'
                                     required>
                             </div>
                             <div class="my-4">

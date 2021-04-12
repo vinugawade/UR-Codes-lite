@@ -1,0 +1,22 @@
+body {
+    height: 100%;
+    background: #fec107;
+}
+
+input {
+    width: 100%;
+}
+
+.qicon {
+    position: relative;
+    top: 0.5rem;
+    display: inline-block;
+    background: url('images/q.png')no-repeat;
+    background-size: cover;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.btn-login {
+    border-radius: 8px;
+}

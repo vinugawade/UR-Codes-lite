@@ -1,22 +1,5 @@
 <?php
-// ******************required imports******************
-require './connect.php';
-session_start();
-
-// ******************Session Check******************
-$class = "invisible";
-
-if(@$_SESSION['logged_user']){
- $username = $_SESSION['logged_user'];
- $class = "visible";
- $href = "./logout.php";
- $text = "<i class='fa fa-sign-out' aria-hidden='true'></i>&nbsp;Log-Out";
-
-}else{
-$href = "./login.php";
- $text = "<i class='fa fa-sign-in' aria-hidden='true'></i>&nbsp;Log-In";
-  }
-
+include("./includes/check_user.php");
 ?>
 
 <!DOCTYPE html>
@@ -34,49 +17,7 @@ $href = "./login.php";
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <style>
-    body {
-        height: 100%;
-        background: #fec107;
-    }
-
-    h3 {
-        text-align: justify;
-    }
-
-    .btn {
-        border-radius: 25px;
-    }
-
-    .masthead {
-        margin: 0;
-        padding: 0;
-    }
-    .btn-login{
-      border-radius:8px;
-    }
-    @media (min-width: 992px) {
-        .masthead {
-            height: 80vh;
-        }
-
-        .masthead h3 {
-            font-size: 1.5rem;
-        }
-    }
-
-    @media (min-width: 300px) {
-        .masthead {
-            height: 80vh;
-        }
-    }
-
-    @media (max-width: 580px) {
-        .masthead {
-            margin: 10px;
-        }
-    }
-    </style>
+<link rel="stylesheet" href="../css/index.css">
 </head>
 
 <body>
