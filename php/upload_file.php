@@ -16,6 +16,7 @@ include("./includes/login_check.php");
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="../ckeditor/ckeditor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/upload_file.css">
 </head>
 
@@ -59,6 +60,20 @@ include("./includes/login_check.php");
             </ul>
         </div>
     </nav>
+    <script>
+	$(document).ready(function(){
+		$("#Notice").modal('show');
+	});
+</script>
+<div id="Notice" class="modal fade">
+    <div class="modal-body" >
+  <h5>Popover in a modal</h5>
+  <p>This <a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-bs-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
+  <hr>
+  <h5>Tooltips in a modal</h5>
+  <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
+</div>
+</div>
     <div class="container py-4">
         <section>
             <div class="mr-auto"></div>
@@ -67,7 +82,7 @@ include("./includes/login_check.php");
             <div class="col-lg-8 col-md-6 col-sm-12 py-5 mx-auto">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Upload UR-CODE Here</h3>
+                        <h3><i class="fas fa-upload"></i>&nbsp;Upload UR-CODE Here</h3>
                     </div>
                     <div class="card-body">
                         <form action="./upload.php" enctype="multipart/form-data" method="POST">
@@ -75,7 +90,6 @@ include("./includes/login_check.php");
                                 <input type="text" inputmode='text' class="form-control" name="project_name" placeholder="Your Project Title" required />
                                 <br>
                             </div>
-
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-sm-12 text-center">
@@ -112,16 +126,11 @@ include("./includes/login_check.php");
                                     </div>
                                 </div>
                             </div>
-
                             <div class="form-group">
-
                                 <select class="form-control" name="project_sub" id="project_sub" required>
                                     <option>Select Class Semester</option>
                                 </select>
-
-
-                            </div>
-
+                           </div>
                             <br>
                             <div class="form-group">
                                 <textarea class="form-control" name="project_group_members" id="project_group_members" placeholder="Names Of Your Members Separate By Comma(',')" required></textarea>

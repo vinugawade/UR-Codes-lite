@@ -28,10 +28,10 @@ if ($_POST['newpassword'] !== $_POST['repassword']) {
 } else {
 
 // ******************Update password******************
-    $q = "SELECT * FROM user_registration WHERE email = '{$email}' AND `password`='{$key}'";
+    $q = "SELECT  SUBSTRING(`password`,1,8)  AS okey FROM user_registration WHERE `email` = '{$email}'";
     $result=$conn->query($q);
-        if ($result->num_rows == 1) {
-
+    $row = $result->fetch_assoc();
+    if($row['okey']==$key){
         $newpassword = md5($_POST['newpassword']);
         $q = "UPDATE user_registration SET `password`='{$newpassword}' WHERE `email`='{$email}'";
 
@@ -43,10 +43,9 @@ if ($_POST['newpassword'] !== $_POST['repassword']) {
             echo "<script>alert('Some Error is Occurred Please Try Again.');window.location.assign('./login.php'); </script>";
         }
 
-
         echo "<script>alert('\"{$user}\" Your Password Has Been Successfully Changed.');window.location.assign('./login.php'); </script>";
 
-    } else {
+} else {
         echo "<script>alert('Invalid Recovery Key.');window.location.assign('./login.php'); </script>";
     }
 

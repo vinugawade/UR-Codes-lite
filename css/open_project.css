@@ -10,3 +10,8 @@ body {
 a:hover {
     text-decoration-line: none;
 }
+
+h6>a,
+h6 {
+    font-family: 'Flamenco', cursive;
+}

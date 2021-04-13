@@ -6,3 +6,7 @@ body {
 .btn-login {
     border-radius: 8px;
 }
+
+h4 {
+    font-family: 'Flamenco', cursive;
+}

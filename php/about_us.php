@@ -71,8 +71,8 @@ include("./includes/check_user.php");
             <h3><a href="#">Vinay </a></h3>
             <p>Web Developer</p>
             <ul class="follow-us clearfix">
-              <li><a href="https://www.facebook.com/profile.php?id=100015980792342" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-              <li><a href="https://www.instagram.com/vinugawadeav/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.facebook.com/vikram.gawade/" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.instagram.com/vinugawadevr" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
               <li><a href="https://www.linkedin.com/in/vinay-gawade-7716b01b1/" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
               <li><a href="https://api.whatsapp.com/send?phone=+917741891658&text=hi.&source=&data=&app_absent=" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
               </ul>
@@ -87,7 +87,7 @@ include("./includes/check_user.php");
               <li><a href="https://www.facebook.com/profile.php?id=100008588832905" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
               <li><a href="https://www.instagram.com/army_vaibhav18/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
               <li><a href="#" ><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-              <li><a href="https://api.whatsapp.com/send?phone=+91 93078 83798&text=hi.&source=&data=&app_absent=" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+              <li><a href="https://api.whatsapp.com/send?phone=+919307883798&text=hi.&source=&data=&app_absent=" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
             </ul>
           </div>
       </li>
@@ -100,7 +100,7 @@ include("./includes/check_user.php");
               <li><a href="https://www.facebook.com/yadnesh.tendolkar" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
               <li><a href="https://www.instagram.com/yadneshtendolkar/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
               <li><a href="#" ><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-              <li><a href="https://api.whatsapp.com/send?phone=+91 83291 16314&text=hi.&source=&data=&app_absent=" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+              <li><a href="https://api.whatsapp.com/send?phone=+918329116314&text=hi.&source=&data=&app_absent=" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
                </ul>
           </div>
        </li>
@@ -113,7 +113,7 @@ include("./includes/check_user.php");
               <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100052883003697"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
               <li><a target="_blank" href="https://www.instagram.com/vaibhav_rj_23/"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
               <li><a target="_blank" href="https://www.linkedin.com/in/vaibhav-jadhav-11029a1a1/"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-              <li><a target="_blank" href=" https://wa.me/9403634351/?text=hi."><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+              <li><a target="_blank" href=" https://wa.me/+919403634351/?text=hi."><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
              </ul>
           </div>
       </li>

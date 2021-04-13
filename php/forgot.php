@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="../css/forgot.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
-<script src="https://smtpjs.com/v3/smtp.js"> </script>
 <?php
 include("./includes/check_user.php");
 
@@ -31,23 +31,11 @@ if ($result->num_rows == 0) {
     }
 }
 ?>
+
+<script src="../js/script.js"></script>
 <script>
-// INTERNET CONNECTIVITY
 var key = '<?php echo "$pass" ?>';
-var queryString = decodeURIComponent(window.location.search);
-queryString = queryString.substring(1);
-var TOemail = queryString.split("=");
-Email.send({
-    Host: "smtp.gmail.com",
-    Username: "vjservice23@gmail.com",
-    Password: "MyPassword@123",
-    To: TOemail[1],
-    From: 'UR-Code-lite@support.in',
-    Subject: "Recovery Code For UR-Code-lite User",
-    Body: "Your Recovery Key Is : " + key,
-}).then(function(message) {
-    alert("Recovery Key Sent To Your Email.");
-});
+email(key.slice(0, 8));
 </script>
 
 <body>
@@ -93,7 +81,7 @@ Email.send({
             <div class="col-lg-4 py-5 mx-auto">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Reset Password</h3>
+                        <h3><i class="fas fa-user-edit"></i>&nbsp;Reset Password</h3>
                     </div>
                     <div class="card-body">
                         <form action='./update.php' method='POST'>

@@ -50,7 +50,7 @@ include("./includes/check_user.php");
         <div class="container text-center my-auto">
 
             <h3 class="mb-5">
-                <em>"Here ,you can view all the coding projects developed by our students and also you can upload your
+                <em style="font-family: 'Flamenco', cursive;" class="text-center middle-align">"Here ,you can view all the coding projects developed by our students and also you can upload your
                     own projects to help other students."</em>
             </h3>
 

@@ -58,6 +58,9 @@ include("./includes/check_user.php");
       </ul>
     </div>
   </nav>
+  <div class="text-center text-bold text-uppercase pt-3">
+  <h4>Select Subject</h4>
+</div>
   <div class="row py-3 mx-2">
 
     <?php
@@ -74,7 +77,7 @@ include("./includes/check_user.php");
       <div class="col-lg-6 col-sm-12 py-2 text-center">
       <div style="min-height:60px; min-width:50%;" >
       <form action="./view.php" method="POST">
-      <button type="submit" name="input_sub" class="card col-lg-12 col-sm-12 py-2 px-5" value=' . $row["project_sub"] . '><h4>' . $row["project_sub"] . '</h4></button>
+      <button type="submit" name="input_sub" class="card col-lg-12 col-sm-12 py-2 px-5" value=' . $row["project_sub"] . '><h4><i class="fas fa-book"></i>&nbsp; ' . $row["project_sub"] . '</h4></button>
       </form>
       </div>
       </div>

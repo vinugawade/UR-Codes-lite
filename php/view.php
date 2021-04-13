@@ -68,7 +68,9 @@ if (isset($_POST['input_sub'])) {
       </ul>
     </div>
   </nav>
-
+<div class="text-center text-bold text-uppercase pt-3">
+  <h4>Select Project</h4>
+</div>
   <div class="row py-3 mx-2">
     <?php
     //  ******************Fetching The Uploaded Projects******************
@@ -84,7 +86,7 @@ if (isset($_POST['input_sub'])) {
       <div class="col-lg-6 col-sm-12 py-2 text-center">
       <div style="min-height:60px; min-width:50%;" >
       <form action="./open_project.php" method="POST">
-      <button class="card col-lg-12 col-sm-12 py-2 px-5" type="submit" name="click" value=' . str_replace(" ", "-", $row["project_name"]) . '><h4>' . $row["project_name"] . '</h4></button>
+      <button class="card col-lg-12 col-sm-12 py-2 px-5" type="submit" name="click" value=' . str_replace(" ", "-", $row["project_name"]) . '><h4><i class="fas fa-folder"></i>&nbsp;' . $row["project_name"] . '</h4></button>
       </form>
       </div>
       </div>';

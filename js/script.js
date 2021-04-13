@@ -20,8 +20,6 @@ function dynamicdropdown(listindex) {
     return true;
 }
 
-
-
 function dynamicsubject(listindex) {
     switch (listindex) {
         case "1":
@@ -50,4 +48,32 @@ function dynamicsubject(listindex) {
     document.getElementById("project_sub").innerHTML = string;
 
     return true;
+}
+
+function email(key) {
+    var queryString = decodeURIComponent(window.location.search);
+    queryString = queryString.substring(1);
+    var TOemail = queryString.split("=");
+
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "vjservice23@gmail.com",
+        Password: "MyPassword@123",
+        To: TOemail[1],
+        From: 'UR-Code-lite@support.in',
+        Subject: "Recovery Code For UR-Code-lite User",
+        Body: "Your Recovery Key Is : " + key,
+    }).then(
+        message => alert("Recovery Key Sent To " + TOemail[1])
+    );
+
+}
+
+function comfirmD() {
+    if (confirm("Are You Sure To Delete This Project?") === true) {
+        document.getElementById("deleteForm").action = "./delete.php";
+        document.getElementById("deleteForm").submit();
+    } else {
+        window.location.assign('./view_projects.php');
+    }
 }

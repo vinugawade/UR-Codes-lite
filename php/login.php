@@ -79,7 +79,7 @@
                             </div>
                             <div class="my-4">
                                 <button type='submit' name='submit' class='btn btn-primary'><i class="fas fa-sign-in-alt"></i>&nbsp;LOGIN</button><br><br>
-                                <a id="check" type='submit' href='./login.php'><small class="text-muted ">Forgot Password? Click Here</small></a>
+                                <a id="check" href='./login.php' class="text-muted text-center"><small>Forgot Password? Click Here</small></a>
                                 <div class="alert alert-warning mt-3 "  role="alert">
                                 <strong><i class="fas fa-exclamation-triangle"></i>&nbsp;Note:</strong> You need <strong class="alert-link" >internet</strong> to get the recovery mail.
                                 </div>

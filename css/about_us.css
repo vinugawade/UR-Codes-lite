@@ -3,6 +3,10 @@ body {
     background: #fec107;
 }
 
+a {
+    font-family: 'Flamenco', cursive;
+}
+
 .row.heading h2 {
     color: #fff;
     font-size: 52.52px;

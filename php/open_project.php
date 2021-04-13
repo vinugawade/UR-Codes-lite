@@ -66,7 +66,7 @@ include("./includes/check_user.php");
       <div class="col-lg-8 col-md-8 col-sm-12 py-5 mx-auto">
         <div class="card">
           <div class="card-header">
-            <h3>Explore UR-CODE Here</h3>
+            <h3><i class="fas fa-folder-open"></i>&nbsp;Explore UR-CODE Here</h3>
           </div>
           <div class="card-body">
             <?php
@@ -98,48 +98,48 @@ include("./includes/check_user.php");
             ?>
             <div class="row mt-3">
               <div class="col-sm-4">Project Name :</div>
-              <div class="col-sm-8"><?php echo @$projectname; ?></div>
+              <div class="col-sm-8"><h6><?php echo @$projectname; ?></h6></div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4">Subject Name :</div>
-              <div class="col-sm-8"><?php echo @$projectsub; ?></div>
+              <div class="col-sm-8"><h6><?php echo @$projectsub; ?></h6></div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4">Department :</div>
-              <div class="col-sm-8"><?php echo @$dept; ?></div>
+              <div class="col-sm-8"><h6><?php echo @$dept; ?></h6></div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4">Uploaded By :</div>
-              <div class="col-sm-8"><?php echo @$projectuploader; ?></div>
+              <div class="col-sm-8"><h6><?php echo @$projectuploader; ?></h6></div>
             </div>
 
             <div class="row mt-3">
               <div class="col-sm-4">Made By :</div>
-              <div class="col-sm-8"><?php echo @$projectgroupmembers; ?></div>
+              <div class="col-sm-8"><h6><?php echo @$projectgroupmembers; ?></h6></div>
             </div>
 
             <div class="row mt-3">
               <div class="col-sm-4">Project Report :</div>
-              <div class="col-sm-8"><a href="<?php echo @$reportdir; ?>" target="_blank"><?php echo @$reportname; ?></a></div>
+              <div class="col-sm-8"><h6><a href="<?php echo @$reportdir; ?>" target="_blank"><?php echo @$reportname; ?></a></h6></div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4">Project Downloads :</div>
-              <div class="col-sm-8"><?php echo @$download_count; ?></div>
+              <div class="col-sm-8"><h6><?php echo @$download_count; ?></h6></div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4">Project Size :</div>
-              <div class="col-sm-8"><?php echo number_format(@$project_size / 1048576, 2) . ' MB'; ?></div>
+              <div class="col-sm-8"><h6><?php echo number_format(@$project_size / 1048576, 2) . ' MB'; ?></h6></div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4">Description :</div>
-              <div class="col-sm-8"><?php echo @$prodescription; ?></div>
+              <div class="col-sm-8"><h6><?php echo @$prodescription; ?></h6></div>
             </div>
 
             <form action="./download.php" method="POST">
               <button type="submit" class="btn btn-block btn-success" name="download-click"><i class="far fa-file-archive fa-lg"></i>&nbsp;Download</button>
             </form>
 
-            <form action="./delete.php" method="POST">
+            <form onsubmit="comfirmD();" id="deleteForm" method="POST">
               <button type="submit" class="btn btn-block my-2 btn-danger" name="delete-click" id="delete" disabled=true><i class="fas fa-trash-alt fa-lg"></i>&nbsp;Delete</button>
               <?php
               if (@$_SESSION['logged_user'] == @$projectuploader) {
@@ -152,6 +152,7 @@ include("./includes/check_user.php");
           </div>
         </div>
       </div>
+      <script src="../js/script.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
