@@ -15,9 +15,9 @@ include("./includes/login_check.php");
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="../ckeditor/ckeditor.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/upload_file.css">
+    <script src="../ckeditor/ckeditor.js"></script>
 </head>
 
 <body>
@@ -60,20 +60,29 @@ include("./includes/login_check.php");
             </ul>
         </div>
     </nav>
-    <script>
-	$(document).ready(function(){
-		$("#Notice").modal('show');
-	});
-</script>
-<div id="Notice" class="modal fade">
-    <div class="modal-body" >
-  <h5>Popover in a modal</h5>
-  <p>This <a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-bs-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
-  <hr>
-  <h5>Tooltips in a modal</h5>
-  <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" data-backdrop="static" data-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-triangle"></i>&nbsp;Important Instructions</h5>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button> -->
+      </div>
+      <div class="modal-body">
+<h5><input type="checkbox" class="i" id="i4">&nbsp;<i class="fas fa-clipboard-check"></i>&nbsp;Attach Project Report File and Zipped File Separated.</h5><br>
+<h5><input type="checkbox" class="i" id="i1">&nbsp;<i class="fas fa-clipboard-check"></i>&nbsp;Select Only '.zip' & '.pdf' Extension's Files to Upload.</h5><br>
+<h5><input type="checkbox" class="i" id="i2">&nbsp;<i class="fas fa-clipboard-check"></i>&nbsp;Select Class & Subject Related to Your Project Only.</h5><br>
+<h5><input type="checkbox" class="i" id="i3">&nbsp;<i class="fas fa-clipboard-check"></i>&nbsp;Enter Group Members Name Separated By 'Comma(,)'.</h5><br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="checkbtn" class="btn btn-primary"  data-dismiss="modal"  disabled>I UnderStood</button>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
+
+
     <div class="container py-4">
         <section>
             <div class="mr-auto"></div>
@@ -87,7 +96,7 @@ include("./includes/login_check.php");
                     <div class="card-body">
                         <form action="./upload.php" enctype="multipart/form-data" method="POST">
                             <div class="form-group">
-                                <input type="text" inputmode='text' class="form-control" name="project_name" placeholder="Your Project Title" required />
+                                <input type="text" inputmode='text' class="form-control" pattern="^[A-Za-z0-9 ]*$" name="project_name" placeholder="Your Project Title" required />
                                 <br>
                             </div>
                             <div class="form-group">
@@ -130,8 +139,8 @@ include("./includes/login_check.php");
                                 <select class="form-control" name="project_sub" id="project_sub" required>
                                     <option>Select Class Semester</option>
                                 </select>
-                           </div>
-                            <br>
+                        </div>
+                        <br>
                             <div class="form-group">
                                 <textarea class="form-control" name="project_group_members" id="project_group_members" placeholder="Names Of Your Members Separate By Comma(',')" required></textarea>
                                 <br>
@@ -157,6 +166,7 @@ include("./includes/login_check.php");
                 </div>
             </div>
         </div>
+    <script src="../js/script.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
