@@ -67,7 +67,6 @@ include("./includes/login_check.php");
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-triangle"></i>&nbsp;Important Instructions</h5>
-        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button> -->
       </div>
       <div class="modal-body">
 <h5><input type="checkbox" class="i" id="i4">&nbsp;<i class="fas fa-clipboard-check"></i>&nbsp;Attach Project Report File and Zipped File Separated.</h5><br>
