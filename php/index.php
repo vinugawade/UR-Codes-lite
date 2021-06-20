@@ -43,8 +43,7 @@ include("./includes/check_user.php");
             </ul>
         </div>
     </nav>
-    <a class="nav-link active" href="../index.php"><i class="fa fa-long-arrow-left"></i> Back <span
-            class="sr-only">(current)</span></a>
+    <a class="nav-link active" href="../index.php"><i class="fa fa-long-arrow-left"></i> Back <span class="sr-only">(current)</span></a>
 
     <header class="masthead d-flex">
         <div class="container text-center my-auto">

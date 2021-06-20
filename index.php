@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>UR-Codes lite</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
   <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
@@ -26,7 +26,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="./PHP/about_us.php"><i class="far fa-address-card"></i>&nbsp;About Us<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="./php/about_us.php"><i class="far fa-address-card"></i>&nbsp;About Us<span class="sr-only">(current)</span></a>
         </li>
       </ul>
     </div>
@@ -38,7 +38,7 @@
         <em>Explore Your Ideas</em>
       </h3>
 
-      <a class="btn btn-primary btn-lg btn-full py-3 px-5 mb-3 mr-md-3" href="./PHP/index.php">Get Started&nbsp;&nbsp;<i class="fad fa-angle-double-right"></i>
+      <a class="btn btn-primary btn-lg btn-full py-3 px-5 mb-3 mr-md-3" href="./php/index.php">Get Started&nbsp;&nbsp;<i class="fad fa-angle-double-right"></i>
       </a>
 
     </div>
