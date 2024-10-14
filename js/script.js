@@ -1,16 +1,4 @@
-// ******************upload files******************
-$(document).ready(function() {
-    $("#exampleModal").modal('show');
-});
-
-$(".i").on("click", function() {
-    if ($(".i:checked").length == 4) {
-        $('#checkbtn').prop('disabled', false);
-    } else {
-        $('#checkbtn').prop('disabled', true);
-    }
-});
-
+// ******************User Defined Function******************
 function dynamicdropdown(listindex) {
     switch (listindex) {
         case "FY":
@@ -61,9 +49,7 @@ function dynamicsubject(listindex) {
 
     return true;
 }
-// ******************upload files******************
 
-// ******************forgot*******************
 function email(key) {
     var queryString = decodeURIComponent(window.location.search);
     queryString = queryString.substring(1);
@@ -71,8 +57,8 @@ function email(key) {
 
     Email.send({
         Host: "smtp.gmail.com",
-        Username: "vjservice23@gmail.com",
-        Password: "MyPassword@123",
+        Username: "<Your-Email>",
+        Password: "<Your-Password>",
         To: TOemail[1],
         From: 'UR-Code-lite@support.in',
         Subject: "Recovery Code For UR-Code-lite User",
@@ -80,11 +66,9 @@ function email(key) {
     }).then(
         message => alert("Recovery Key Sent To " + TOemail[1])
     );
+
 }
-// ******************forgot*******************
 
-
-// ******************open project******************
 function comfirmD() {
     if (confirm("Are You Sure To Delete This Project?") === true) {
         document.getElementById("deleteForm").action = "./delete.php";
@@ -93,4 +77,3 @@ function comfirmD() {
         window.location.assign('./view_projects.php');
     }
 }
-// ******************open project******************
